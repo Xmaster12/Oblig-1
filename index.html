@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<style>
+
+    body{
+        display: flex;
+        justify-content: center;
+    }
+
+    .box{
+        text-align: center;
+        position: relative;
+        background-color: lightblue;
+        width:50%;
+        border-radius: 8px;
+    }
+
+    .tall{
+        width: 5%;
+        margin-right: 16%;
+    }
+
+
+
+
+</style>
+
+<body>
+<div class="box">
+
+  <h1> Bestilling av Kinobiletter</h1>
+
+  Velg film:
+
+    <select class="Filmer">
+
+     <option name="default"> Velg film her:</option>
+     <option name="Avatar"> Avatar</option>
+     <option name="Matrix"> Matrix </option>
+     <option name="Up"> Up</option>
+     <option name="Your name"> Your name</option>
+     <option name="Are we there yet"> Are we there yet</option>
+     <option name="Home alone"> Home alone</option>
+
+    </select>
+
+    <br>
+    <br>
+
+    Antall <input type="number" class="tall">
+
+    <br>
+    <br>
+
+
+       <a style="margin-left: 8px"> Fornavn</a>   <input type="text" class="Fornavn">
+        <br>
+        <br>
+       <a>Etternavn </a> <input type="text" class="Etternavn">
+        <br>
+        <br>
+       <a>Telefonnr </a>  <input type="text" class="Telefonnr">
+        <br>
+        <br>
+       <a style="margin-left: 25px">Epost</a> <input type="text" class="Epost">
+
+    <br>
+    <br>
+
+    <button class="Sum"> Kjøp bilett</button>
+
+    <br>
+    <br>
+
+
+
+        <h1> Alle biletter</h1>
+
+        <br>
+        <br>
+
+    <div class="box2">
+
+
+    </div>
+
+       <br>
+       <br>
+        <button class="Slett"> Slett alle bilettene </button>
+
+
+
+        <br>
+</div>
+
+
+
+
+<script>
+
+  let film = document.querySelector(".Filmer");
+
+  let antall = document.querySelector(".tall");
+
+  let fornavn = document.querySelector(".Fornavn");
+  let etternavn = document.querySelector(".Etternavn");
+  let telefonnr = document.querySelector(".Telefonnr");
+  let epost = document.querySelector(".Epost");
+
+  let knapp = document.querySelector(".Sum");
+  let slett = document.querySelector(".Slett");
+
+  let tabell = document.querySelector(".box2");
+
+
+  knapp.addEventListener("click", nyknapp);
+  slett.addEventListener("click", nyslett);
+
+  function  nyknapp() {
+
+      console.log("Film: " +film.value);
+      console.log("Antall: " +antall.value);
+      console.log("Fornavn: " +fornavn.value);
+      console.log("Etternavn: " +etternavn.value);
+      console.log("Telefonnr: " +telefonnr.value);
+      console.log("E-post: " +epost.value);
+      console.log(" " );
+
+      tabell.innerHTML= " <p> "+ "Film: " + film.value +"</p> "+
+          " <p> "+  "Antall: " +antall.value +"</p> "+
+          " <p> "+  "Fornavn: " +fornavn.value +"</p> "+
+          " <p> "+ "Etternavn: " +etternavn.value +"</p> "+
+          " <p> "+  "Telefonnr: " +telefonnr.value +"</p> "+
+          " <p> "+  "Epost: " + epost.value +"</p> "
+
+  }
+
+  function  nyslett() {
+
+      console.log(" " );
+
+      tabell.innerHTML= "";
+
+  }
+
+
+</script>
+
+</body>
+</html>
